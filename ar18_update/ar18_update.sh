@@ -6,10 +6,12 @@ set -e
 
 read -s -p "foo:" foo2
 
-cd "${script_dir}"
+echo "${foo2}" | sudo -Sk rm -rf /tmp/ar18_update
+mkdir -p /tmp/ar18_update
+
+cd /tmp/ar18_update
 
 LD_PRELOAD=
-echo "${foo2}" | sudo -S -k  rm -rf ./xfce_desktop_deployment
 
 git clone https://github.com/ar18-linux/xfce_desktop_deployment.git
 
