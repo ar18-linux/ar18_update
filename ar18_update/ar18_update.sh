@@ -41,7 +41,7 @@ cd /tmp/ar18_update
 
 git clone https://github.com/ar18-linux/xfce_desktop_deployment.git
 
-xfce_desktop_deployment/xfce_desktop_deployment/exec.sh
+. xfce_desktop_deployment/xfce_desktop_deployment/exec.sh
 
 # End of script
 # Restore old shell values
