@@ -31,11 +31,12 @@ set -x
 
 . "${script_dir}/vars"
 
-mkdir -p "${install_dir}"
+. "${script_dir}/vars"
+if [ -z "${ar18_helper_functions+x}" ]; then rm -rf "/tmp/helper_functions_$(logname)"; cd /tmp; git clone https://github.com/ar18-linux/helper_functions.git; mv "/tmp/helper_functions" "/tmp/helper_functions_$(logname)" . "/tmp/helper_functions_$(logname)/helper_functions/helper_functions.sh"; cd "${script_dir}"; fi
 
-rm -rf "${install_dir}/${module_name}"
-cp -rf "${script_dir}/${module_name}" "${install_dir}/${module_name}"
-chmod +x "${install_dir}/${module_name}/"* -R
+obtain_sudo_password
+
+ar18_install "${install_dir}" "${module_name}" "${script_dir}"
 
 # End of script
 # Restore old shell values
