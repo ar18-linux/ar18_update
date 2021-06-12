@@ -1,5 +1,5 @@
 #!/bin/bash
-# ar18
+# ar18#
 
 # Script template version 2021-06-13
 # Make sure some modification to LD_PRELOAD will not alter the result or outcome in any way
@@ -48,6 +48,7 @@ git clone https://github.com/ar18-linux/xfce_desktop_deployment.git
 xfce_desktop_deployment/xfce_desktop_deployment/exec.sh
 
 echo "${ar18_pacman_cache_updated}"
+
 ##################################SCRIPT_END###################################
 # Restore old shell values
 set +x
