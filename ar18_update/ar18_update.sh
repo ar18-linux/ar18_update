@@ -18,7 +18,6 @@ if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
 else
   ar18_sourced_map["${script_path}"]=0
 fi
-echo "sourced: ${ar18_sourced_map["${script_path}"]}" 
 # Initialise exit code
 if [ -z "${ar18_exit_map+x}" ]; then
   declare -A -g ar18_exit_map
@@ -43,9 +42,7 @@ cd /tmp/ar18_update
 
 git clone https://github.com/ar18-linux/xfce_desktop_deployment.git
 
-echo "sourced: ${ar18_sourced_map["${script_path}"]}" 
 xfce_desktop_deployment/xfce_desktop_deployment/exec.sh
-echo "sourced: ${ar18_sourced_map["${script_path}"]}" 
 
 # End of script
 # Restore old shell values
@@ -56,7 +53,6 @@ done
 # Restore LD_PRELOAD
 LD_PRELOAD="${LD_PRELOAD_old}"
 # Return or exit depending on whether the script was sourced or not
-echo "sourced: ${ar18_sourced_map["${script_path}"]}" 
 if [ "${ar18_sourced_map["${script_path}"]}" = "1" ]; then
   return "${ar18_exit_map["${script_path}"]}"
 else
