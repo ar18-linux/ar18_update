@@ -44,7 +44,7 @@ cd /tmp/ar18_update
 git clone https://github.com/ar18-linux/xfce_desktop_deployment.git
 
 echo "sourced: ${ar18_sourced_map["${script_path}"]}" 
-. xfce_desktop_deployment/xfce_desktop_deployment/exec.sh
+xfce_desktop_deployment/xfce_desktop_deployment/exec.sh
 echo "sourced: ${ar18_sourced_map["${script_path}"]}" 
 
 # End of script
