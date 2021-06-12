@@ -31,6 +31,7 @@ set -o pipefail
 set -eu
 set -x
 # Start of script
+#------------------------------------------------------
 
 . "${script_dir}/vars"
 if [ ! -v ar18_helper_functions ]; then rm -rf "/tmp/helper_functions_$(whoami)"; cd /tmp; git clone https://github.com/ar18-linux/helper_functions.git; mv "/tmp/helper_functions" "/tmp/helper_functions_$(whoami)"; . "/tmp/helper_functions_$(whoami)/helper_functions/helper_functions.sh"; cd "${script_dir}"; export ar18_helper_functions=1; fi
@@ -45,6 +46,9 @@ git clone https://github.com/ar18-linux/xfce_desktop_deployment.git
 
 xfce_desktop_deployment/xfce_desktop_deployment/exec.sh
 
+echo "${ar18_pacman_cache_updated}"
+
+#------------------------------------------------------
 # End of script
 # Restore old shell values
 set +x
