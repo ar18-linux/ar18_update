@@ -1,3 +1,0 @@
-if [ -z "${debug+x}" ]; then
-  export debug=0
-fi
