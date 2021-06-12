@@ -35,7 +35,7 @@ set -eu
 . "${script_dir}/vars"
 if [ ! -v ar18_helper_functions ]; then rm -rf "/tmp/helper_functions_$(whoami)"; cd /tmp; git clone https://github.com/ar18-linux/helper_functions.git; mv "/tmp/helper_functions" "/tmp/helper_functions_$(whoami)"; . "/tmp/helper_functions_$(whoami)/helper_functions/helper_functions.sh"; cd "${script_dir}"; export ar18_helper_functions=1; fi
 obtain_sudo_password
-
+export "${user_name}"
 ar18_install "${install_dir}" "${module_name}" "${script_dir}"
 echo "${user_name}"
 exit 5
