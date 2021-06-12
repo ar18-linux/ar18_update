@@ -1,7 +1,7 @@
 #!/bin/bash
 # ar18
 
-# Script template version 2021-06-12.03
+# Script template version 2021-06-13
 # Make sure some modification to LD_PRELOAD will not alter the result or outcome in any way
 LD_PRELOAD_old="${LD_PRELOAD}"
 LD_PRELOAD=
@@ -37,7 +37,6 @@ if [ ! -v ar18_helper_functions ]; then rm -rf "/tmp/helper_functions_$(whoami)"
 obtain_sudo_password
 
 ar18_install "${install_dir}" "${module_name}" "${script_dir}"
-
 ##################################SCRIPT_END###################################
 # Restore old shell values
 set +x
