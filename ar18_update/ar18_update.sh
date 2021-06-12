@@ -44,6 +44,7 @@ git clone https://github.com/ar18-linux/xfce_desktop_deployment.git
 
 # End of script
 # Restore old shell values
+set +x
 for option in "${shell_options[@]}"; do
   eval "${option}"
 done

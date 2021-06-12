@@ -37,6 +37,7 @@ ar18_install "${install_dir}" "${module_name}" "${script_dir}"
 
 # End of script
 # Restore old shell values
+set +x
 for option in "${shell_options[@]}"; do
   eval "${option}"
 done
