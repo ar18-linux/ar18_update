@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script template version 2021-06-12.01
+# Script template version 2021-06-12.02
 # Make sure some modification to LD_PRELOAD will not alter the result or outcome in any way
 LD_PRELOAD_old="${LD_PRELOAD}"
 LD_PRELOAD=
@@ -10,7 +10,7 @@ script_path="${script_dir}/$(basename "${0}")"
 #Set PS4 for easier debugging
 export PS4='\e[35m${BASH_SOURCE[0]}:${LINENO}: \e[39m'
 # Determine if this script was sourced or is the parent script
-if [ -z "${ar18_sourced_map+x}" ]; then
+if [ ! -v ar18_sourced_map ]; then
   declare -A -g ar18_sourced_map
 fi
 if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
@@ -31,6 +31,7 @@ set -o pipefail
 set -eu
 set -x
 # Start of script
+
 . "${script_dir}/vars"
 if [ ! -v ar18_helper_functions ]; then rm -rf "/tmp/helper_functions_$(whoami)"; cd /tmp; git clone https://github.com/ar18-linux/helper_functions.git; mv "/tmp/helper_functions" "/tmp/helper_functions_$(whoami)"; . "/tmp/helper_functions_$(whoami)/helper_functions/helper_functions.sh"; cd "${script_dir}"; export ar18_helper_functions=1; fi
 obtain_sudo_password
