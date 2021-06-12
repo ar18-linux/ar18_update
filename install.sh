@@ -37,6 +37,7 @@ if [ ! -v ar18_helper_functions ]; then rm -rf "/tmp/helper_functions_$(whoami)"
 obtain_sudo_password
 
 ar18_install "${install_dir}" "${module_name}" "${script_dir}"
+
 ##################################SCRIPT_END###################################
 # Restore old shell values
 set +x
