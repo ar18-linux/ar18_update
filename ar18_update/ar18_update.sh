@@ -44,9 +44,9 @@ mkdir -p /tmp/ar18_update
 
 cd /tmp/ar18_update
 
-git clone https://github.com/ar18-linux/xfce_desktop_deployment.git
+git clone https://github.com/ar18-linux/deploy.git
 
-xfce_desktop_deployment/xfce_desktop_deployment/exec.sh
+deploy/deploy/exec.sh
 
 # TODO: Use a global variable for it so the parent and other children know that the cache was updated. Alternatively, look for a way to checkif cache was updated recently in pacman itsself
 #echo "${ar18_pacman_cache_updated}"
