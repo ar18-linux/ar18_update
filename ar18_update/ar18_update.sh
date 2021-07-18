@@ -185,7 +185,7 @@ ar18.script.import ar18.script.import_vars
 ar18.script.import ar18.script.execute_with_sudo
 ar18.script.import ar18.script.version_check
 
-ar18.script.version_check
+ar18.script.version_check "${@}"
 
 ar18.script.obtain_sudo_password
 
