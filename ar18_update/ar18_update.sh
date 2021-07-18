@@ -196,8 +196,8 @@ cd "/tmp/ar18_update"
 
 git clone https://github.com/ar18-linux/deploy.git
 
-ar18.script.execute_with_sudo chmod +x "/tmp/ar18_update/deploy/deploy/exec.sh"
-"/tmp/ar18_update/deploy/deploy/exec.sh"
+ar18.script.execute_with_sudo chmod +x "/tmp/ar18_update/deploy/deploy/init.sh"
+"/tmp/ar18_update/deploy/deploy/init.sh"
 
 # TODO: Use a global variable for it so the parent and other children know that the cache was updated. Alternatively, look for a way to checkif cache was updated recently in pacman itsself
 #echo "${ar18_pacman_cache_updated}"
